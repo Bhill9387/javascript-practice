@@ -189,7 +189,23 @@ function calculateFinalPrice (basePrice, memberTier, isHoliday) {
           if (discount >= 50) {
             return "Free shipping for client";
           }
+         else {
+            return finalPrice+10
+         }
      }
 
+function calculateDiscount(price, isMember) {
+    if (price <= 0 || typeof price !== "number") {
+        return "Invalid price";
+    } else if (isMember === true) {
+        return price * 0.8;
+    } else {
+        return price * 0.9;
+    }
+}
+
+console.log(calculateDiscount(100, true));  // 80
+console.log(calculateDiscount(100, false)); // 90
+console.log(calculateDiscount(0, true));    // Invalid price
 
     
