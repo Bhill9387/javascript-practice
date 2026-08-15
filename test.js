@@ -1,44 +1,4 @@
-// ======================================================
-// Exercise 1: Ticket Price Calculator
-// ======================================================
 
-// Original attempt preserved for my teacher:
-//
-// function getTicketPrice(age) {
-//     if (age < 12) {
-//         return "Child $8;";
-//     } else if (age > 65) {
-//         return "Senior $10";
-//     } else if (age >= 13 && age <= 64) {
-//         return "Adult $15";
-//     } else {
-//         return "Invalid age";
-//     }
-// }
-
-// Corrected version:
-function getTicketPrice(age) {
-    if (age < 0 || age > 120) {
-        return "Invalid age";
-    } else if (age <= 12) {
-        return "Child $8";
-    } else if (age >= 65) {
-        return "Senior $10";
-    } else {
-        return "Adult $15";
-    }
-}
-
-console.log("--- Ticket Price Calculator ---");
-console.log(getTicketPrice(8));  // Child $8
-console.log(getTicketPrice(15)); // Adult $15
-console.log(getTicketPrice(70)); // Senior $10
-console.log(getTicketPrice(-5)); // Invalid age
-
-
-// ======================================================
-// Exercise 2: Grade Calculator
-// ======================================================
 
 function getLetterGrade(score) {
     if (score < 0 || score > 100) {
@@ -108,20 +68,6 @@ console.log(isStoreOpen(25)); // Invalid hour
 // Exercise 5: Positive, Negative, or Zero
 // ======================================================
 
-function checkNumber(number) {
-    if (number > 0) {
-        return "Positive";
-    } else if (number < 0) {
-        return "Negative";
-    } else {
-        return "Zero";
-    }
-}
-
-console.log("\n--- Check Number ---");
-console.log(checkNumber(8));  // Positive
-console.log(checkNumber(-3)); // Negative
-console.log(checkNumber(0));  // Zero
 
 
 // ======================================================
@@ -242,3 +188,43 @@ console.log(checkGrade(95));
 console.log(checkGrade(85)); 
 console.log(checkGrade(75)); 
 console.log(checkGrade(60)); 
+
+function getTicketPrice(age) {
+    if (age < 13) {
+        return 8;
+    }
+
+    if (age >= 65) {
+        return 10;
+    }
+
+    return 15;
+}
+
+function classifyNumber(number) {
+    if (number > 0) {
+        return "Positive";
+    }
+
+    if (number < 0) {
+        return "Negative";
+    }
+
+    return "Zero";
+}
+
+console.log(classifyNumber(10));
+console.log(classifyNumber(-4));
+console.log(classifyNumber(0));
+
+function checkLogin(username, password) {
+    if (username === "admin" && password === "javascript123") {
+        return "Access granted";
+    } else {
+        return "Access denied";
+    }
+}
+
+console.log(checkLogin("admin", "javascript123")); // Access granted
+console.log(checkLogin("admin", "wrongpassword")); // Access denied
+console.log(checkLogin("Brandon", "javascript123")); // Access denied
