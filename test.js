@@ -228,3 +228,141 @@ function checkLogin(username, password) {
 console.log(checkLogin("admin", "javascript123")); // Access granted
 console.log(checkLogin("admin", "wrongpassword")); // Access denied
 console.log(checkLogin("Brandon", "javascript123")); // Access denied
+
+
+
+function getTemperatureAdvice(temp) {
+    if (temp > 100 || temp < -50) {
+        return "Invalid temperature";
+    } else if (temp >= 85) {
+        return "Very hot";
+    } else if (temp >= 70) {
+        return "Warm";
+    } else if (temp >= 50) {
+        return "Cool";
+    } else {
+        return "Cold";
+    }
+}
+
+console.log(getTemperatureAdvice(90));  // Very hot
+console.log(getTemperatureAdvice(75));  // Warm
+console.log(getTemperatureAdvice(55));  // Cool
+console.log(getTemperatureAdvice(30));  // Cold
+console.log(getTemperatureAdvice(150)); // Invalid temperature
+
+function getShippingCost(orderTotal) {
+    if (orderTotal < 0) {
+        return "Invalid order total";
+    } else if (orderTotal >= 100) {
+        return 0;
+    } else if (orderTotal >= 50) {
+        return 5;
+    } else {
+        return 10;
+    }
+}
+
+console.log(getShippingCost(120)); // 0
+console.log(getShippingCost(75));  // 5
+console.log(getShippingCost(30));  // 10
+console.log(getShippingCost(-10)); // Invalid order total
+
+function calculateWeeklyPay(hoursWorked, hourlyRate) {
+    if (hoursWorked < 0 || hourlyRate < 0) {
+        return "Invalid input";
+    } else if (hoursWorked <= 40) {
+        return hoursWorked * hourlyRate;
+    } else {
+        const regularPay = 40 * hourlyRate;
+        const overtimeHours = hoursWorked - 40;
+        const overtimeRate = hourlyRate * 1.5;
+        const overtimePay = overtimeHours * overtimeRate;
+
+        return regularPay + overtimePay;
+    }
+}
+
+console.log(calculateWeeklyPay(40, 20)); // 800
+console.log(calculateWeeklyPay(48, 20)); // 1040
+console.log(calculateWeeklyPay(35, 20)); // 700
+console.log(calculateWeeklyPay(-5, 20)); // Invalid input
+
+const users = [
+    { name: "admin", password: "javascript123" },
+    { name: "user1", password: "password1" },
+    { name: "user2", password: "password2" },
+];
+const data = [1,2,3]
+
+function isEven(number) {
+    if (number % 2 === 0) {
+        return "Even";
+    } else {
+        return "Odd";
+    }
+}
+
+function getLargerNumber(num1, num2) {
+    if (num1 > num2) {
+        return num1;
+    } else if (num2 > num1) {
+        return num2;
+    } else {
+        return num1; 
+    }
+}
+
+
+
+console.log(getLargerNumber(10, 20)); 
+console.log(getLargerNumber(50, 12)); 
+console.log(getLargerNumber(7, 7));  
+
+
+console.log(isEven(8));
+console.log(isEven(9));
+console.log(isEven(20));
+console.log(isEven(17));
+
+function getSmallerNumber(num1, num2) {
+    if (num1 < num2) {
+        return num1;
+    } else if (num2 < num1) {
+        return num2;
+    } else {
+        return num1;
+    }
+}
+
+console.log(getSmallerNumber(10, 20));
+console.log(getSmallerNumber(50, 12));
+console.log(getSmallerNumber(7, 7));
+
+function checkPasswordLength(password) {
+    if (password.length < 8) {
+        return "Password too short";
+    } else {
+        return "Password accepted";
+    }
+}
+
+console.log(checkPasswordLength("hello"));
+console.log(checkPasswordLength("javascript"));
+
+function calculateTip(bill, service) {
+    if (service === "good") {
+        return bill * 0.20;
+    } else if (service === "average") {
+        return bill * 0.15;
+    } else if (service === "bad") {
+        return bill * 0.10;
+    } else {
+        return "Invalid service";
+    }
+}
+
+console.log(calculateTip(100, "good"));
+console.log(calculateTip(100, "average"));
+console.log(calculateTip(100, "bad"));
+console.log(calculateTip(100, "terrible"));
